@@ -4,13 +4,11 @@ export default function Navbar() {
 	const pathname = usePathname();
 
 	const linkActive = (href) => {
-		console.log(href);
-		console.log(pathname);
 		return pathname === href;
 	};
 	return (
-		<nav class="bg-transparent h-4 absolute top-0 w-full font-serif">
-			<div class="container flex items-center justify-center mt-6 mx-auto text-amber-100 capitalize h-4">
+		<nav className="bg-transparent h-4 absolute top-0 w-full font-serif">
+			<div className="container flex items-center justify-center mt-6 mx-auto text-amber-100 capitalize h-4">
 				<a
 					href="/"
 					className={`border-b-2  hover:text-amber-100 transition-colors duration-300 transform ${
