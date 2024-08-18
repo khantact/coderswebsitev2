@@ -2,38 +2,38 @@
 import React from "react";
 
 const events = [
-	{
-		id: 1,
-		title: "Coding Bootcamp",
-		date: "2024-09-10",
-		time: "10:00 AM - 4:00 PM",
-		description:
-			"A full-day coding bootcamp covering the basics of web development.",
-	},
-	{
-		id: 2,
-		title: "Tech Talk: The Future of AI",
-		date: "2024-09-15",
-		time: "2:00 PM - 3:30 PM",
-		description:
-			"A talk by industry experts on the latest trends and advancements in AI.",
-	},
-	{
-		id: 3,
-		title: "Hackathon Kickoff",
-		date: "2024-10-01",
-		time: "9:00 AM - 6:00 PM",
-		description:
-			"A 24-hour hackathon where teams compete to build innovative solutions.",
-	},
-	{
-		id: 4,
-		title: "Networking Mixer",
-		date: "2024-10-10",
-		time: "6:00 PM - 8:00 PM",
-		description:
-			"An opportunity to network with professionals and fellow coders in the community.",
-	},
+	// {
+	// 	id: 1,
+	// 	title: "Coding Bootcamp",
+	// 	date: "2024-09-10",
+	// 	time: "10:00 AM - 4:00 PM",
+	// 	description:
+	// 		"A full-day coding bootcamp covering the basics of web development.",
+	// },
+	// {
+	// 	id: 2,
+	// 	title: "Tech Talk: The Future of AI",
+	// 	date: "2024-09-15",
+	// 	time: "2:00 PM - 3:30 PM",
+	// 	description:
+	// 		"A talk by industry experts on the latest trends and advancements in AI.",
+	// },
+	// {
+	// 	id: 3,
+	// 	title: "Hackathon Kickoff",
+	// 	date: "2024-10-01",
+	// 	time: "9:00 AM - 6:00 PM",
+	// 	description:
+	// 		"A 24-hour hackathon where teams compete to build innovative solutions.",
+	// },
+	// {
+	// 	id: 4,
+	// 	title: "Networking Mixer",
+	// 	date: "2024-10-10",
+	// 	time: "6:00 PM - 8:00 PM",
+	// 	description:
+	// 		"An opportunity to network with professionals and fellow coders in the community.",
+	// },
 ];
 
 function EventSchedule() {
@@ -65,6 +65,9 @@ function EventSchedule() {
 					))}
 				</div>
 			</div>
+			<h1 className="text-black text-center w-full">
+				Nothing yet! This will be updated as more events are planned.
+			</h1>
 		</div>
 	);
 }
