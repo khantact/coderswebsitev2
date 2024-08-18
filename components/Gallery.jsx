@@ -1,88 +1,65 @@
 import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 
-function Gallery() {
-	const settings = {
-		dots: true,
-		infinite: true,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		speed: 1000,
-		responsive: [
-			{
-				breakpoint: 1024,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1,
-					infinite: true,
-					dots: true,
-				},
-			},
-			{
-				breakpoint: 600,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1,
-				},
-			},
-			{
-				breakpoint: 480,
-				settings: {
-					slidesToShow: 1,
-					slidesToScroll: 1,
-				},
-			},
-		],
-	};
-	return (
-		<div className="container mx-auto max-w-lg ">
-			<Slider {...settings} className="">
-				<div className="">
-					<Image
-						src="/Images/GateHacks/hackdart.jpg"
-						width={500}
-						height={500}
-						alt="HackGate"
-					/>
-				</div>
-				<div>
-					<Image
-						src="/Images/GateHacks/Pitch.jpeg"
-						width={500}
-						height={500}
-						alt="HackGate"
-					/>
-				</div>
-				<div>
-					<Image
-						src="/Images/GateHacks/IMG_9758.jpeg"
-						width={500}
-						height={500}
-						alt="HackGate"
-					/>
-				</div>
+const images = [
+	{
+		src: "/Images/GateHacks/hackdart.jpg",
+		alt: "HackGate",
+		caption: "HackGate Event",
+	},
+	{
+		src: "/Images/GateHacks/Pitch.jpeg",
+		alt: "HackGate",
+		caption: "Pitch Presentation",
+	},
+	{
+		src: "/Images/GateHacks/IMG_9758.jpeg",
+		alt: "HackGate",
+		caption: "Team Collaboration",
+	},
+	{
+		src: "/Images/LAHacks/BiscuitBuddy.jpeg",
+		alt: "HackGate",
+		caption: "Biscuit Buddy Demo",
+	},
+	{
+		src: "/Images/LAHacks/GroupPhoto.jpeg",
+		alt: "HackGate",
+		caption: "Group Photo",
+	},
+];
 
-				<div className="h-full flex justify-center items-center">
-					<Image
-						src="/Images/LAHacks/BiscuitBuddy.jpeg"
-						width={500}
-						height={500}
-						alt="HackGate"
-						className="r"
-					/>
+function Gallery() {
+	return (
+		<div className="pt-8 pb-16 px-4 bg-gradient-to-r from-gray-50 to-gray-200">
+			<div className="container mx-auto max-w-6xl">
+				<h1 className="text-8xl font-bold text-center text-teal-800 mb-8">
+					Gallery
+				</h1>
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+					{images.map((image, index) => (
+						<div
+							key={index}
+							className="relative bg-white rounded-lg shadow-lg overflow-hidden group"
+						>
+							<div className="relative w-full h-64">
+								<Image
+									src={image.src}
+									alt={image.alt}
+									layout="fill"
+									objectFit="cover"
+									className="rounded-lg"
+								/>
+							</div>
+							<div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+								<p className="text-white text-lg p-4 text-center">
+									{image.caption}
+								</p>
+							</div>
+						</div>
+					))}
 				</div>
-				<div>
-					<Image
-						src="/Images/LAHacks/GroupPhoto.jpeg"
-						width={500}
-						height={500}
-						alt="HackGate"
-					/>
-				</div>
-			</Slider>
+			</div>
 		</div>
 	);
 }

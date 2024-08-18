@@ -7,60 +7,47 @@ export default function Navbar() {
 		return pathname === href;
 	};
 	return (
-		<nav className="bg-transparent h-4 absolute top-0 w-full font-serif">
-			<div className="container flex items-center justify-center mt-6 mx-auto text-amber-100 capitalize h-4">
+		<nav className="absolute top-0 w-full font-serif bg-teal-800 shadow-md">
+			<div className="container flex items-center justify-center py-4 mx-auto text-gray-100 capitalize">
 				<a
 					href="/"
-					className={`border-b-2  hover:text-amber-100 transition-colors duration-300 transform ${
+					className={`border-b-2 pb-1 transition-colors duration-300 transform ${
 						linkActive("/")
-							? "border-orange-200"
-							: "border-transparent"
-					} hover:border-orange-200 mx-1.5 sm:mx-6`}
+							? "border-teal-300 text-teal-300"
+							: "border-transparent hover:text-teal-400"
+					} mx-4`}
 				>
-					HOME
-				</a>
-				<a
-					href="https://getinvolved.colgate.edu/organization/colgate-coders"
-					target="_blank"
-					className={`border-b-2  hover:text-amber-100 transition-colors duration-300 transform ${
-						linkActive("/getinvolved")
-							? "border-orange-200"
-							: "border-transparent"
-					} hover:border-orange-200 mx-1.5 sm:mx-6`}
-				>
-					GETINVOLVED
+					Home
 				</a>
 				<a
 					href="/eventschedule"
-					className={`border-b-2  hover:text-amber-100 transition-colors duration-300 transform ${
+					className={`border-b-2 pb-1 transition-colors duration-300 transform ${
 						linkActive("/eventschedule")
-							? "border-orange-200"
-							: "border-transparent"
-					} hover:border-orange-200 mx-1.5 sm:mx-6`}
+							? "border-teal-300 text-teal-300"
+							: "border-transparent hover:text-teal-400"
+					} mx-4`}
 				>
-					EVENT SCHEDULE
+					Event Schedule
 				</a>
-
 				<a
 					href="/workshops"
-					className={`border-b-2  hover:text-amber-100 transition-colors duration-300 transform ${
+					className={`border-b-2 pb-1 transition-colors duration-300 transform ${
 						linkActive("/workshops")
-							? "border-orange-200"
-							: "border-transparent"
-					} hover:border-orange-200 mx-1.5 sm:mx-6`}
+							? "border-teal-300 text-teal-300"
+							: "border-transparent hover:text-teal-400"
+					} mx-4`}
 				>
-					WORKSHOPS
+					Workshops
 				</a>
-
 				<a
 					href="/hackathons"
-					className={`border-b-2  hover:text-amber-100 transition-colors duration-300 transform ${
+					className={`border-b-2 pb-1 transition-colors duration-300 transform ${
 						linkActive("/hackathons")
-							? "border-orange-200"
-							: "border-transparent"
-					} hover:border-orange-200 mx-1.5 sm:mx-6`}
+							? "border-teal-300 text-teal-300"
+							: "border-transparent hover:text-teal-400"
+					} mx-4`}
 				>
-					HACKATHONS
+					Hackathons
 				</a>
 			</div>
 		</nav>

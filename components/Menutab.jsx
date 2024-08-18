@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { useState, useEffect } from "react";
 
 function Menutab() {
@@ -35,94 +34,35 @@ function Menutab() {
 		}
 	}, [missionTab]);
 	return (
-		<div className="">
-			<div className="grid grid-cols-1">
-				<div className="flex justify-center mt-8">
-					<div className="flex gap-6 border-b border-emerald-900/50 text-emerald-900/50">
-						<button
-							onClick={() => {
-								setMissionTab("Action");
-								console.log("missiontab:", missionTab);
-							}}
-							className={`${
-								missionTab === "Action"
-									? "text-emerald-900 border-b-emerald-950 border-b-2"
-									: "text-emerald-900/50"
-							}px-1 pb-4 text-2xl border-b-2 border-transparent transition ease-in`}
-						>
-							Take action
-						</button>
-
-						<button
-							onClick={() => {
-								setMissionTab("Support");
-								console.log("missiontab:", missionTab);
-							}}
-							className={`${
-								missionTab === "Support"
-									? "text-emerald-900 border-b-emerald-950 border-b-2"
-									: "text-emerald-900/50"
-							}px-1 pb-4 text-2xl border-b-2 border-transparent transition ease-in`}
-						>
-							Provide support
-						</button>
-
-						<button
-							onClick={() => {
-								setMissionTab("Conversation");
-								console.log("missiontab:", missionTab);
-							}}
-							className={`${
-								missionTab === "Conversation"
-									? "text-emerald-900 border-b-emerald-950 border-b-2"
-									: "text-emerald-900/50"
-							}px-1 pb-4 text-2xl border-b-2 border-transparent transition ease-in`}
-						>
-							Create conversation
-						</button>
-						<button
-							onClick={() => {
-								setMissionTab("Inspire");
-								console.log("missiontab:", missionTab);
-							}}
-							className={`${
-								missionTab === "Inspire"
-									? "text-emerald-900 border-b-emerald-950 border-b-2"
-									: "text-emerald-900/50"
-							}px-1 pb-4 text-2xl border-b-2 border-transparent transition ease-in`}
-						>
-							Inspire
-						</button>
-					</div>
+		<div className=" bg-gray-200 h-fit text-gray-900 pb-8">
+			<h1 className="text-8xl w-full text-center pt-8 pb-4 text-teal-800">
+				OUR {<br></br>}MISSION
+			</h1>
+			<div className="flex justify-center">
+				<div className="flex gap-8 border-b border-emerald-900/50 text-emerald-900/50">
+					{["Action", "Support", "Conversation", "Inspire"].map(
+						(tab) => (
+							<button
+								key={tab}
+								onClick={() => {
+									setMissionTab(tab);
+									console.log("missiontab:", missionTab);
+								}}
+								className={`${
+									missionTab === tab
+										? "text-emerald-900 border-b-emerald-950 border-b-4"
+										: "text-emerald-900/50"
+								} px-2 pb-4 text-2xl transition-all duration-300 hover:text-emerald-700 hover:border-b-emerald-700`}
+							>
+								{tab}
+							</button>
+						)
+					)}
 				</div>
-				{missionTab === "Action" ? (
-					<h2 className="flex place-content-center mt-8 text-2xl text-center mx-[25vw] select-none animate-fadeIn">
-						{missionText}
-					</h2>
-				) : (
-					<></>
-				)}
-				{missionTab === "Support" ? (
-					<h2 className="flex place-content-center mt-8 text-2xl text-center mx-[25vw] select-none animate-fadeIn">
-						{missionText}
-					</h2>
-				) : (
-					<></>
-				)}
-				{missionTab === "Conversation" ? (
-					<h2 className="flex place-content-center mt-8 text-2xl text-center mx-[25vw] select-none animate-fadeIn">
-						{missionText}
-					</h2>
-				) : (
-					<></>
-				)}
-				{missionTab === "Inspire" ? (
-					<h2 className="flex place-content-center mt-8 text-2xl text-center mx-[25vw] select-none animate-fadeIn">
-						{missionText}
-					</h2>
-				) : (
-					<></>
-				)}
+			</div>
+
+			<div className="flex justify-center mt-8 text-2xl text-center mx-[25vw] select-none animate-fadeIn">
+				{missionTab && <h2>{missionText}</h2>}
 			</div>
 		</div>
 	);
