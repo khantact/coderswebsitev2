@@ -1,6 +1,6 @@
 import React from "react";
 
-const VideoEmbed = ({ url, title }) => {
+const VideoEmbed = ({ url, title, caption }) => {
 	const videoId = new URL(url).searchParams.get("v");
 
 	return (
@@ -8,15 +8,20 @@ const VideoEmbed = ({ url, title }) => {
 			href={url}
 			target="_blank"
 			rel="noopener noreferrer"
-			className="block bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 transition-transform transform hover:scale-105"
+			className="block relative bg-white rounded-xl shadow-lg overflow-hidden border border-gray-300 transition-transform transform hover:scale-105 hover:shadow-xl"
 		>
 			<img
 				src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
 				alt={title}
-				className="w-full h-32 object-cover"
+				className="w-full h-48 object-cover"
 			/>
-			<div className="p-4">
-				<h2 className="text-xl font-semibold text-teal-700 truncate">
+			<div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 flex items-center justify-center transition-opacity duration-300 backdrop-blur-sm">
+				<p className="text-white text-lg font-medium px-4 text-center font-serif">
+					{caption}
+				</p>
+			</div>
+			<div className="p-6">
+				<h2 className="text-2xl font-semibold text-teal-800 truncate mb-2">
 					{title}
 				</h2>
 			</div>

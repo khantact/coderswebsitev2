@@ -17,9 +17,14 @@ module.exports = {
 					"0%": { opacity: "0" },
 					"100%": { opacity: "1" },
 				},
+				marquee: {
+					"0%": { transform: "translateX(100%)" },
+					"100%": { transform: "translateX(-100%)" },
+				},
 			},
 			animation: {
 				fadeIn: "fade 1s ease-in-out",
+				marquee: "marquee 15s linear infinite",
 			},
 		},
 	},

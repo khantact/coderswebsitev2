@@ -49,6 +49,16 @@ export default function Navbar() {
 				>
 					Hackathons
 				</a>
+				<a
+					href="/eboard"
+					className={`border-b-2 pb-1 transition-colors duration-300 transform ${
+						linkActive("/eboard")
+							? "border-teal-300 text-teal-300"
+							: "border-transparent hover:text-teal-400"
+					} mx-4`}
+				>
+					E-Board
+				</a>
 			</div>
 		</nav>
 	);

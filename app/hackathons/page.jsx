@@ -25,7 +25,7 @@ const upcomingHackathonEvents = [
 
 function Hackathons() {
 	return (
-		<div className="bg-gray-100 py-8">
+		<div className="bg-gray-100 mt-8 py-8">
 			<h1 className="text-4xl font-bold text-center text-teal-800 mb-6 pt-8">
 				Upcoming Hackathons
 			</h1>

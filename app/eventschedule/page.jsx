@@ -38,7 +38,7 @@ const events = [
 
 function EventSchedule() {
 	return (
-		<div className="bg-gray-100 min-h-screen py-8 overflow-y-hidden">
+		<div className="bg-gray-100 mt-8 min-h-screen overflow-y-hidden">
 			<h1 className="text-4xl font-bold text-center text-teal-800 mb-6 pt-8">
 				Event Schedule
 			</h1>
