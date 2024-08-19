@@ -1,170 +1,33 @@
 "use client";
 import React, { useState } from "react";
 import VideoEmbed from "@/components/VideoEmbed";
+import videoData from "../../public/data/workshopVideos.json";
 
-const workshopTopics = [
-	{
-		topic: "Web Development",
-		videos: [
-			{
-				id: 1,
-				title: "Web Development Fundamentals",
-				url: "https://www.youtube.com/watch?v=C15UkWl7Z_U",
-				caption:
-					"Learn the basics of HTML and CSS to create static websites and a one-page personal website.",
-			},
-		],
-	},
-	{
-		topic: "Programming",
-		videos: [
-			{
-				id: "P1",
-				title: "Introduction to Python",
-				url: "https://www.youtube.com/watch?v=5Qcm-kNbrU0",
-				caption:
-					"Python is an increasingly popular language. This workshop will provide you with a good grasp of the fundamentals.",
-			},
-			{
-				id: "P2",
-				title: "Introduction to Java",
-				url: "https://www.youtube.com/watch?v=iri_Swy27Zo",
-				caption:
-					"Learn the basics of Java, one of the most used programming languages, and apply them to practice problems.",
-			},
-			{
-				id: "P3",
-				title: "Django Framework",
-				url: "https://www.youtube.com/watch?v=z4YF1BZNX-c",
-				caption: "Learn how to build a Django backend for a to-do app.",
-			},
-			{
-				id: "P4",
-				title: "Introduction to JavaScript",
-				url: "https://www.youtube.com/watch?v=Lzvcuo4iR70",
-				caption:
-					"Learn the basics of JavaScript and make a static website interactive.",
-			},
-			{
-				id: "P5",
-				title: "Introduction to React",
-				url: "https://www.youtube.com/watch?v=ZP4DCOwI2BA",
-				caption:
-					"Learn the fundamentals of React by building the front-end for a to-do list app.",
-			},
-			{
-				id: "P6",
-				title: "Introduction to Open Source Contribution",
-				url: "https://www.youtube.com/watch?v=D9GquEsiyLY",
-				caption:
-					"Learn how to make quality contributions to open source, including intermediate git functionality and project selection.",
-			},
-			{
-				id: "P7",
-				title: "Unit Testing",
-				url: "https://www.youtube.com/watch?v=Vg8MYqGkSxw",
-				caption:
-					"Learn to write tests for individual functions using Python's unittest library and advanced testing techniques.",
-			},
-			{
-				id: "P8",
-				title: "Functional Programming with OCaml",
-				url: "https://www.youtube.com/watch?v=iHLdlNSqXfE",
-				caption:
-					"Learn a functional programming language that aligns with natural human thinking and ensures code reliability.",
-			},
-		],
-	},
-	{
-		topic: "Tools and IDEs",
-		videos: [
-			{
-				id: "TI1",
-				title: "Intro to IDEs",
-				url: "https://www.youtube.com/watch?v=NLcQQZauu3o",
-				caption:
-					"Learn about popular development tools and how they aid in writing maintainable code.",
-			},
-			{
-				id: "TI2",
-				title: "GitHub 101",
-				url: "https://www.youtube.com/watch?v=ErBlLb8X3Sw",
-				caption:
-					"An interactive workshop on GitHub basics, including personal and collaborative use.",
-			},
-			{
-				id: "TI3",
-				title: "Command Line Fundamentals",
-				url: "https://www.youtube.com/watch?v=NqcaKQLM1Cg",
-				caption:
-					"Cover essential skills for command line work, including navigation, file editing, and script writing.",
-			},
-			{
-				id: "TI4",
-				title: "Personal Web Deployment",
-				url: "https://www.youtube.com/watch?v=-Jra38l_bko",
-				caption:
-					"Learn how to host personal websites for free using GitHub Pages.",
-			},
-		],
-	},
-	{
-		topic: "Data Science",
-		videos: [
-			{
-				id: 3,
-				title: "Data Science Basics",
-				url: "https://www.youtube.com/watch?v=y6WKOFUsrGA&feature=youtu.be",
-				caption:
-					"Learn to solve data problems from start to finish and explore statistical analysis.",
-			},
-		],
-	},
-	{
-		topic: "Job Search",
-		videos: [
-			{
-				id: 4,
-				title: "Networking 101",
-				url: "https://www.youtube.com/watch?v=vz-_89yTTXA",
-				caption:
-					"Best practices for networking to secure high-demand roles in tech, finance, and consulting.",
-			},
-		],
-	},
-	{
-		topic: "Popular Buzzwords",
-		videos: [
-			{
-				id: 5,
-				title: "Blockchain 101",
-				url: "https://www.youtube.com/watch?v=ffoKvNg4Lpk",
-				caption:
-					"Understand blockchain technology and its potential impact.",
-			},
-		],
-	},
-];
-
-function Workshops() {
-	const [activeSection, setActiveSection] = useState(null);
+const Workshops = () => {
+	const [activeTags, setActiveTags] = useState([]);
 	const [searchTerm, setSearchTerm] = useState("");
+	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-	const toggleSection = (idx) => {
-		setActiveSection(activeSection === idx ? null : idx);
+	const handleTagClick = (tag) => {
+		setActiveTags((prev) =>
+			prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
+		);
 	};
 
-	// Flatten the video array and filter based on search term
-	const filteredVideos = workshopTopics.flatMap((section) =>
-		section.videos.filter((video) =>
-			video.title.toLowerCase().includes(searchTerm.toLowerCase())
-		)
+	const toggleDropdown = () => {
+		setIsDropdownOpen((prev) => !prev);
+	};
+
+	const filteredVideos = videoData.filter(
+		(video) =>
+			video.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
+			(activeTags.length === 0 ||
+				video.tags.some((tag) => activeTags.includes(tag)))
 	);
 
-	// Get the list of videos to display (filtered or all)
-	const videosToDisplay = searchTerm
-		? filteredVideos
-		: workshopTopics.flatMap((section) => section.videos);
+	const allTags = Array.from(
+		new Set(videoData.flatMap((video) => video.tags))
+	);
 
 	return (
 		<div className="py-8">
@@ -183,14 +46,50 @@ function Workshops() {
 					/>
 				</div>
 
+				<div className="relative mb-6">
+					<button
+						onClick={toggleDropdown}
+						className="w-full px-4 py-2 bg-teal-500 text-white rounded-md shadow-md hover:shadow-lg transition-transform transform"
+					>
+						Filter by Tag
+					</button>
+					<div
+						className={`absolute top-full left-0 mt-2 w-full bg-white border rounded-md shadow-lg z-10 transition-transform transform ${
+							isDropdownOpen
+								? "opacity-100 scale-100"
+								: "opacity-0 scale-95"
+						}`}
+						style={{
+							transition:
+								"opacity 0.3s ease, transform 0.3s ease",
+						}}
+					>
+						<div className="flex flex-wrap gap-2 p-4">
+							{allTags.map((tag) => (
+								<button
+									key={tag}
+									className={`px-4 py-2 rounded-md transition-transform transform ${
+										activeTags.includes(tag)
+											? "bg-teal-500 text-white scale-105"
+											: "bg-gray-200 text-gray-800 hover:bg-teal-400 hover:text-white"
+									} shadow-md hover:shadow-lg`}
+									onClick={() => handleTagClick(tag)}
+								>
+									{tag}
+								</button>
+							))}
+						</div>
+					</div>
+				</div>
+
 				<div className="mb-6">
-					{videosToDisplay.length === 0 && searchTerm ? (
+					{filteredVideos.length === 0 && searchTerm ? (
 						<p className="text-center text-gray-500">
 							No videos found.
 						</p>
 					) : (
 						<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-							{videosToDisplay.map((video) => (
+							{filteredVideos.map((video) => (
 								<div key={video.id} className="mb-6">
 									<VideoEmbed
 										url={video.url}
@@ -205,6 +104,6 @@ function Workshops() {
 			</div>
 		</div>
 	);
-}
+};
 
 export default Workshops;

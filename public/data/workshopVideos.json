@@ -1,0 +1,114 @@
+[
+	{
+		"id": 1,
+		"title": "Web Development Fundamentals",
+		"url": "https://www.youtube.com/watch?v=C15UkWl7Z_U",
+		"caption": "Learn the basics of HTML and CSS to create static websites and a one-page personal website.",
+		"tags": ["web development"]
+	},
+	{
+		"id": "P1",
+		"title": "Introduction to Python",
+		"url": "https://www.youtube.com/watch?v=5Qcm-kNbrU0",
+		"caption": "Python is an increasingly popular language. This workshop will provide you with a good grasp of the fundamentals.",
+		"tags": ["programming"]
+	},
+	{
+		"id": "P2",
+		"title": "Introduction to Java",
+		"url": "https://www.youtube.com/watch?v=iri_Swy27Zo",
+		"caption": "Learn the basics of Java, one of the most used programming languages, and apply them to practice problems.",
+		"tags": ["programming"]
+	},
+	{
+		"id": "P3",
+		"title": "Django Framework",
+		"url": "https://www.youtube.com/watch?v=z4YF1BZNX-c",
+		"caption": "Learn how to build a Django backend for a to-do app.",
+		"tags": ["programming", "frameworks"]
+	},
+	{
+		"id": "P4",
+		"title": "Introduction to JavaScript",
+		"url": "https://www.youtube.com/watch?v=Lzvcuo4iR70",
+		"caption": "Learn the basics of JavaScript and make a static website interactive.",
+		"tags": ["programming"]
+	},
+	{
+		"id": "P5",
+		"title": "Introduction to React",
+		"url": "https://www.youtube.com/watch?v=ZP4DCOwI2BA",
+		"caption": "Learn the fundamentals of React by building the front-end for a to-do list app.",
+		"tags": ["programming", "React"]
+	},
+	{
+		"id": "P6",
+		"title": "Introduction to Open Source Contribution",
+		"url": "https://www.youtube.com/watch?v=D9GquEsiyLY",
+		"caption": "Learn how to make quality contributions to open source, including intermediate git functionality and project selection.",
+		"tags": ["programming", "git"]
+	},
+	{
+		"id": "P7",
+		"title": "Unit Testing",
+		"url": "https://www.youtube.com/watch?v=Vg8MYqGkSxw",
+		"caption": "Learn to write tests for individual functions using Python's unittest library and advanced testing techniques.",
+		"tags": ["programming", "testing"]
+	},
+	{
+		"id": "P8",
+		"title": "Functional Programming with OCaml",
+		"url": "https://www.youtube.com/watch?v=iHLdlNSqXfE",
+		"caption": "Learn a functional programming language that aligns with natural human thinking and ensures code reliability.",
+		"tags": ["programming", "functional programming"]
+	},
+	{
+		"id": "TI1",
+		"title": "Intro to IDEs",
+		"url": "https://www.youtube.com/watch?v=NLcQQZauu3o",
+		"caption": "Learn about popular development tools and how they aid in writing maintainable code.",
+		"tags": ["tools"]
+	},
+	{
+		"id": "TI2",
+		"title": "GitHub 101",
+		"url": "https://www.youtube.com/watch?v=ErBlLb8X3Sw",
+		"caption": "An interactive workshop on GitHub basics, including personal and collaborative use.",
+		"tags": ["tools", "git"]
+	},
+	{
+		"id": "TI3",
+		"title": "Command Line Fundamentals",
+		"url": "https://www.youtube.com/watch?v=NqcaKQLM1Cg",
+		"caption": "Cover essential skills for command line work, including navigation, file editing, and script writing.",
+		"tags": ["tools"]
+	},
+	{
+		"id": "TI4",
+		"title": "Personal Web Deployment",
+		"url": "https://www.youtube.com/watch?v=-Jra38l_bko",
+		"caption": "Learn how to host personal websites for free using GitHub Pages.",
+		"tags": ["tools", "deployment"]
+	},
+	{
+		"id": "D1",
+		"title": "Data Science Basics",
+		"url": "https://www.youtube.com/watch?v=y6WKOFUsrGA&feature=youtu.be",
+		"caption": "Learn to solve data problems from start to finish and explore statistical analysis.",
+		"tags": ["data science"]
+	},
+	{
+		"id": "J1",
+		"title": "Networking 101",
+		"url": "https://www.youtube.com/watch?v=vz-_89yTTXA",
+		"caption": "Best practices for networking to secure high-demand roles in tech, finance, and consulting.",
+		"tags": ["career", "networking"]
+	},
+	{
+		"id": "B1",
+		"title": "Blockchain 101",
+		"url": "https://www.youtube.com/watch?v=ffoKvNg4Lpk",
+		"caption": "Understand blockchain technology and its potential impact.",
+		"tags": ["tech"]
+	}
+]
