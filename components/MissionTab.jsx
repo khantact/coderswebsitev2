@@ -33,10 +33,11 @@ function Menutab() {
 				);
 		}
 	}, [missionTab]);
+
 	return (
-		<div className=" bg-gray-200 h-fit text-gray-900 pb-8">
-			<h1 className="text-8xl w-full text-center pt-8 pb-4 text-teal-800">
-				OUR {<br></br>}MISSION
+		<div className="bg-gray-200 h-fit text-gray-900 pb-8 z-10">
+			<h1 className="text-8xl w-full text-center pt-8 pb-4 text-teal-800 select-none">
+				OUR {<br />}MISSION
 			</h1>
 			<div className="flex justify-center">
 				<div className="flex gap-8 border-b border-emerald-900/50 text-emerald-900/50">
@@ -46,7 +47,6 @@ function Menutab() {
 								key={tab}
 								onClick={() => {
 									setMissionTab(tab);
-									console.log("missiontab:", missionTab);
 								}}
 								className={`${
 									missionTab === tab
@@ -61,8 +61,12 @@ function Menutab() {
 				</div>
 			</div>
 
-			<div className="flex justify-center mt-8 text-2xl text-center mx-[25vw] select-none animate-fadeIn">
-				{missionTab && <h2>{missionText}</h2>}
+			<div
+				className={`flex justify-center mt-8 text-2xl text-center mx-[25vw] select-none transition-opacity duration-1000 ${
+					missionText ? "opacity-100" : "opacity-0"
+				}`}
+			>
+				<h2>{missionText}</h2>
 			</div>
 		</div>
 	);

@@ -45,7 +45,7 @@ const eboardMembers = [
 
 const EBoard = () => {
 	return (
-		<div className="py-12 bg-gray-100 mt-8">
+		<div className="py-12 bg-gray-100 mt-8 select-none">
 			<h1 className="text-5xl font-extrabold text-center text-teal-800 mb-10">
 				E-Board Members 2024
 			</h1>

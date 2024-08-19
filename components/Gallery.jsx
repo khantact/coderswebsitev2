@@ -33,10 +33,10 @@ function Gallery() {
 	return (
 		<div className="pt-8 pb-16 px-4 bg-gradient-to-r from-gray-50 to-gray-200">
 			<div className="container mx-auto max-w-6xl">
-				<h1 className="text-8xl font-bold text-center text-teal-800 mb-8">
+				<h1 className="text-8xl font-bold text-center text-teal-800 mb-8 select-none">
 					Gallery
 				</h1>
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 select-none">
 					{images.map((image, index) => (
 						<div
 							key={index}
@@ -52,7 +52,7 @@ function Gallery() {
 								/>
 							</div>
 							<div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-								<p className="text-white text-lg p-4 text-center">
+								<p className="text-white text-lg p-4 text-center select-none">
 									{image.caption}
 								</p>
 							</div>

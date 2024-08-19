@@ -1,15 +1,15 @@
 import React from "react";
 import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
 import { loadSlim } from "tsparticles-slim";
 
-const ParticlesComponent = () => {
+const ParticlesComponent = ({ className }) => {
 	const particlesInit = async (engine) => {
 		await loadSlim(engine);
 	};
 
 	return (
 		<Particles
+			className={className}
 			id="tsparticles"
 			init={particlesInit}
 			options={{

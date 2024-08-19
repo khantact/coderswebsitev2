@@ -14,6 +14,11 @@ const Workshops = () => {
 		);
 	};
 
+	const clearFilters = () => {
+		setActiveTags([]);
+		setSearchTerm("");
+	};
+
 	const toggleDropdown = () => {
 		setIsDropdownOpen((prev) => !prev);
 	};
@@ -30,7 +35,7 @@ const Workshops = () => {
 	);
 
 	return (
-		<div className="py-8">
+		<div className="relative py-8">
 			<h1 className="text-4xl font-bold text-center text-teal-800 mb-6 pt-8">
 				Workshops
 			</h1>
@@ -54,7 +59,7 @@ const Workshops = () => {
 						Filter by Tag
 					</button>
 					<div
-						className={`absolute top-full left-0 mt-2 w-full bg-white border rounded-md shadow-lg z-10 transition-transform transform ${
+						className={`absolute top-full left-0 mt-2 w-full bg-white border rounded-md shadow-lg z-30 transition-transform transform ${
 							isDropdownOpen
 								? "opacity-100 scale-100"
 								: "opacity-0 scale-95"
@@ -62,6 +67,7 @@ const Workshops = () => {
 						style={{
 							transition:
 								"opacity 0.3s ease, transform 0.3s ease",
+							pointerEvents: isDropdownOpen ? "auto" : "none",
 						}}
 					>
 						<div className="flex flex-wrap gap-2 p-4">
@@ -79,10 +85,18 @@ const Workshops = () => {
 								</button>
 							))}
 						</div>
+						<div className="p-4 border-t border-gray-200">
+							<button
+								onClick={clearFilters}
+								className="w-full px-4 py-2 bg-red-500 text-white rounded-md shadow-md hover:bg-red-600 transition-colors"
+							>
+								Clear Filters
+							</button>
+						</div>
 					</div>
 				</div>
 
-				<div className="mb-6">
+				<div className="relative z-20 mb-6">
 					{filteredVideos.length === 0 && searchTerm ? (
 						<p className="text-center text-gray-500">
 							No videos found.
@@ -90,7 +104,7 @@ const Workshops = () => {
 					) : (
 						<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 							{filteredVideos.map((video) => (
-								<div key={video.id} className="mb-6">
+								<div key={video.id} className="relative">
 									<VideoEmbed
 										url={video.url}
 										title={video.title}

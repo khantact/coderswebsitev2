@@ -1,5 +1,5 @@
 "use client";
-import Menutab from "@/components/Menutab";
+import Menutab from "@/components/MissionTab";
 import Gallery from "@/components/Gallery";
 import SplashScreen from "@/components/SplashScreen";
 import Marquee from "react-fast-marquee";
@@ -16,10 +16,12 @@ export default function Home() {
 			>
 				{headerMessages}
 			</Marquee>
-			<div className="">
-				<SplashScreen></SplashScreen>
-				<Menutab />
-				<Gallery />
+			<div className="relative">
+				<SplashScreen />
+				<div className="relative z-10">
+					<Menutab />
+					<Gallery />
+				</div>
 			</div>
 		</main>
 	);

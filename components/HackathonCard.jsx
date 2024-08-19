@@ -6,8 +6,8 @@ const HackathonCard = ({ url, title, description, date }) => {
 			rel="noopener noreferrer"
 			className="block bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 transition-transform transform hover:scale-105"
 		>
-			<div className="p-4">
-				<h2 className="text-xl font-semibold text-teal-700 mb-1 truncate">
+			<div className="p-4 select-none">
+				<h2 className="text-xl font-semibold text-teal-700 mb-1 truncate ">
 					{title}
 				</h2>
 				<p className="text-gray-500 text-sm">{date}</p>

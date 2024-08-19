@@ -9,7 +9,7 @@ export default function Navbar() {
 	};
 
 	return (
-		<nav className="absolute top-0 w-full font-serif bg-teal-800 shadow-md z-20">
+		<nav className="absolute top-0 w-full font-serif bg-teal-800 shadow-md z-20 select-none">
 			<div className="container flex items-center justify-center py-4 mx-auto text-gray-100 capitalize">
 				<a
 					href="/"
