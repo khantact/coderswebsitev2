@@ -6,7 +6,7 @@ const upcomingHackathonEvents = [
 		title: "GateHacks '24",
 		url: "https://gatehacksappdeployed-git-main-jaanhvi18s-projects.vercel.app/",
 		description:
-			"A 48-hour hackathon for tech enthusiasts to innovate and collaborate.",
+			"Join us for a 48-hour hackathon focused on generative AI! Compete in teams, and win awards for Best UI and Best API Use. Engage in workshops, network with judges, and showcase your innovation.",
 		date: "September 28-29, 2024",
 	},
 ];
@@ -14,10 +14,10 @@ const upcomingHackathonEvents = [
 const pastHackathonEvents = [
 	{
 		id: 1,
-		title: "GateHacks",
-		url: "",
+		title: "HackGate",
+		url: "https://github.com/ColgateUniversityComputerScience/hackathon",
 		description:
-			"A 48-hour hackathon for tech enthusiasts to innovate and collaborate.",
+			"Colgate's very first student-led hackathon, featuring a variety of workshops, fun programming and robotics challenges, food (brunch, dinner, & breakfast), coding, workshops, and prizes",
 		date: "March 23-24, 2024",
 	},
 ];
