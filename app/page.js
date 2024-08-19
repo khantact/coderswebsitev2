@@ -10,7 +10,10 @@ export default function Home() {
 
 	return (
 		<main className="font-serif">
-			<Marquee speed={75} className="select-none py-1 mt-6 bg-teal-500">
+			<Marquee
+				speed={75}
+				className="select-none pt-2 pb-1 mt-6 bg-teal-500 z-10"
+			>
 				{headerMessages}
 			</Marquee>
 			<div className="">

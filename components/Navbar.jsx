@@ -1,13 +1,15 @@
 "use client";
 import { usePathname } from "next/navigation";
+
 export default function Navbar() {
 	const pathname = usePathname();
 
 	const linkActive = (href) => {
 		return pathname === href;
 	};
+
 	return (
-		<nav className="absolute top-0 w-full font-serif bg-teal-800 shadow-md">
+		<nav className="absolute top-0 w-full font-serif bg-teal-800 shadow-md z-20">
 			<div className="container flex items-center justify-center py-4 mx-auto text-gray-100 capitalize">
 				<a
 					href="/"

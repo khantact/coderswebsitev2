@@ -21,10 +21,15 @@ module.exports = {
 					"0%": { transform: "translateX(100%)" },
 					"100%": { transform: "translateX(-100%)" },
 				},
+				gradientX: {
+					"0%, 100%": { backgroundPosition: "0% 50%" },
+					"50%": { backgroundPosition: "100% 50%" },
+				},
 			},
 			animation: {
 				fadeIn: "fade 1s ease-in-out",
 				marquee: "marquee 15s linear infinite",
+				gradientAnimation: "gradientX 1s ease infinite",
 			},
 		},
 	},
