@@ -29,7 +29,7 @@ const eboardMembers = [
 	{
 		name: "Yuliia Heleveria",
 		position: "Social Media Director",
-		photo: "/Images/Eboard/placeholder-headshot.png",
+		photo: "/Images/Eboard/yuliia.jpg",
 	},
 	{
 		name: "Dilni Pathirana",
@@ -55,13 +55,15 @@ const EBoard = () => {
 						key={index}
 						className="text-center bg-white p-6 rounded-lg shadow-lg transform transition-transform"
 					>
-						<Image
-							src={member.photo}
-							alt={member.name}
-							width={200}
-							height={200}
-							className="rounded-full mx-auto"
-						/>
+						<div className="relative w-48 h-48 mx-auto overflow-hidden rounded-full">
+							<Image
+								src={member.photo}
+								alt={member.name}
+								layout="fill"
+								objectFit="cover"
+								className="rounded-full"
+							/>
+						</div>
 						<h2 className="mt-6 text-2xl text-teal-700 font-semibold">
 							{member.name}
 						</h2>

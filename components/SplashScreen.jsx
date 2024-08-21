@@ -6,13 +6,13 @@ import ParticlesComponent from "./ParticlesComponent";
 
 function SplashScreen() {
 	return (
-		<div className="relative w-screen h-screen overflow-hidden bg-gradient-to-b from-teal-900 to-teal-700 flex flex-col items-center justify-center">
+		<div className="relative w-full h-screen overflow-hidden bg-gradient-to-b from-teal-900 to-teal-700 flex flex-col items-center justify-center">
 			<ParticlesComponent className="absolute inset-0 z-0" />
 			<div className="relative z-10 text-center p-4">
-				<h1 className="text-8xl text-gray-200 select-none">
+				<h1 className=" text-7xl md:text-8xl text-gray-200 select-none">
 					&lt; Colgate Coders /&gt;
 				</h1>
-				<div className="text-center w-full text-xl mt-4 text-gray-200 select-none">
+				<div className="text-m text-center w-full md:text-xl mt-4 text-gray-200 select-none">
 					<TypeIt options={{ speed: 15 }}>
 						We want to create an environment where people who are
 						interested in coding
