@@ -6,7 +6,7 @@ import Marquee from "react-fast-marquee";
 
 export default function Home() {
 	const headerMessages =
-		"New workshops available! Explore them now. Stay tuned for upcoming events and news.";
+		"CS Industry Panel at COSC student lounge 9/5 11:30 - 12:30";
 
 	return (
 		<main className="font-serif">
