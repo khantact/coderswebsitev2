@@ -1,0 +1,50 @@
+[
+	{
+		"id": 1,
+		"title": "PDF Resources",
+		"resources": [
+			{
+				"id": 1,
+				"title": "CS Internship Guide",
+				"description": "A guide for Computer Science students looking for internship/research advice. Written by Lily Davisson.",
+				"link": "/pdfs/Advice for Mentees.pdf",
+				"type": "pdf"
+			}
+		]
+	},
+	{
+		"id": 2,
+		"title": "Web Links",
+		"resources": [
+			{
+				"id": 1,
+				"title": "Colgate Career Services Toolkit",
+				"description": "Contains helpful tools for applying to jobs (including résumé guide) and networking.",
+				"link": "https://www.colgate.edu/about/campus-services-and-resources/career-services-toolkit",
+				"type": "web"
+			},
+			{
+				"id": 2,
+				"title": "Internships / New Grad positions 2025",
+				"description": "From the repo - \"Use this repo to keep track of software, tech, CS, PM, quant internships for Summer 2025. The list is maintained collaboratively by the Pitt Computer Science Club and Simplify!\"",
+				"link": "https://github.com/SimplifyJobs/Summer2025-Internships",
+				"type": "web",
+				"isNew": true
+			}
+		]
+	},
+	{
+		"id": 3,
+		"title": "Recommended Books",
+		"books": [
+			{
+				"id": 1,
+				"title": "Clean Code",
+				"author": "Robert C. Martin",
+				"description": "A handbook of agile software craftsmanship.",
+				"link": "https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882",
+				"isNew": true
+			}
+		]
+	}
+]
